@@ -1,0 +1,42 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+
+	<ui:composition template="index.xhtml">
+		<ui:define name="content">
+			<div class="container">
+				<div class="row">
+					<div class="col">
+						<h2>Read</h2>
+					</div>
+				</div>
+			</div>
+			
+			<div class="container">
+				<div class="row">
+					<div class="col-md-8 offset-md-2">
+						<h:form>
+							<table class="table">
+								<thead>
+									<th>Name</th>
+									<th>Salary</th>
+									<th>Gender</th>
+								</thead>
+								<tbody>
+									<ui:repeat var="p" value="#{personMB.listPerson}">
+										<tr>
+											<td>#{p.name}</td>
+											<td>#{p.salary}</td>
+											<td>#{p.gender}</td>
+										</tr>										
+									</ui:repeat>
+								</tbody>
+							</table>
+						</h:form>						
+					</div>
+				</div>
+			</div>
+		</ui:define>
+	</ui:composition>	
+</html>
