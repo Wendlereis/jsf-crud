@@ -16,14 +16,17 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-md-8 offset-md-2">
+						<h:messages styleClass="alert alert-danger"/>
 						<h:form>
 							<div class="form-group">
 								<label>#{l.name}:</label>
-								<h:inputText styleClass="form-control" value="#{personMB.person.name}"></h:inputText>						
+								<h:inputText styleClass="form-control" required="true" requiredMessage="#{l.errEmptyField}" value="#{personMB.person.name}"></h:inputText>						
 							</div>
 							<div class="form-group">
 								<label>#{l.salary}:</label>
-								<h:inputText styleClass="form-control" value="#{personMB.person.salary}"></h:inputText>						
+								<h:inputText styleClass="form-control" required="true" validatorMessage="#{l.errSalaryRange}" value="#{personMB.person.salary}">
+									<f:validateDoubleRange minimum="1000" maximum="50000"></f:validateDoubleRange>
+								</h:inputText>						
 							</div>
 							<div class="form-group">
 								<label>#{l.gender}:</label>
