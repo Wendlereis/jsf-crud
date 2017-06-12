@@ -4,31 +4,34 @@
       xmlns:h="http://java.sun.com/jsf/html"
       xmlns:f="http://java.sun.com/jsf/core"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
-	<h:head>
-		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css"/>
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"></script>
-		<link rel="stylesheet" href="css/style.css"/>
-		<title>Index Page</title>
-	</h:head>
-	<h:body>
-		<header>
-			<h1>CRUD</h1>
-			<a href="#">sair</a>
-			<div class="container">
-				<div class="row">
-					<div class="col-md-8 offset-md-2">
-						<ul>
-							<li><a href="create.jsf">Create</a></li>
-							<li><a href="read.jsf">Read</a></li>
-							<li><a href="update.jsf">Update</a></li>
-							<li><a href="delete.jsf">Delete</a></li>
-						</ul>
+    
+    <f:view locale="#{facesContext.externalContext.requestLocale}">
+		<h:head>
+			<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+			<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css"/>
+			<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"></script>
+			<link rel="stylesheet" href="css/style.css"/>
+			<title>Index Page</title>
+		</h:head>
+		<h:body>
+			<header>
+				<h1>CRUD</h1>
+				<a href="#">#{l.exit}</a>
+				<div class="container">
+					<div class="row">
+						<div class="col-md-8 offset-md-2">
+							<ul>
+								<li><a href="create.jsf">#{l.create}</a></li>
+								<li><a href="read.jsf">#{l.read}</a></li>
+								<li><a href="update.jsf">#{l.update}</a></li>
+								<li><a href="delete.jsf">#{l.delete}</a></li>
+							</ul>
+						</div>
 					</div>
-				</div>
-			</div>			
-		</header>
-		
-		<ui:insert name="content"></ui:insert>
-	</h:body>
+				</div>			
+			</header>
+			
+			<ui:insert name="content"></ui:insert>
+		</h:body>
+	</f:view>
 </html>

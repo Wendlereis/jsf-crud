@@ -8,7 +8,7 @@
 			<div class="container">
 				<div class="row">
 					<div class="col">
-						<h2>Delete</h2>
+						<h2>#{l.tleDelete}</h2>
 					</div>
 				</div>
 			</div>
@@ -18,22 +18,22 @@
 					<div class="col-md-8 offset-md-2">
 						<h:form>
 							<div class="form-group">
-								<label>Name:</label>
+								<label>#{l.name}:</label>
 								<h:inputText styleClass="form-control" value="#{personMB.person.name}"></h:inputText>						
 							</div>
 							<div class="form-group">
-								<label>Salary:</label>
+								<label>#{l.salary}:</label>
 								<h:inputText styleClass="form-control" value="#{personMB.person.salary}"></h:inputText>						
 							</div>
 							<div class="form-group">
-								<label>Sexo:</label>
+								<label>#{l.gender}:</label>
 								<h:selectOneMenu styleClass="form-control" value="#{personMB.person.gender}">
-									<f:selectItem itemValue="Select..."></f:selectItem>
-									<f:selectItem itemValue="Masculino"></f:selectItem>
-									<f:selectItem itemValue="Feminino"></f:selectItem>
+									<f:selectItem itemValue="#{l.select}"></f:selectItem>
+									<f:selectItem itemValue="#{l.male}"></f:selectItem>
+									<f:selectItem itemValue="#{l.female}"></f:selectItem>
 								</h:selectOneMenu>					
 							</div>
-							<h:commandButton styleClass="btn btn-primary" value="Save" action="#{personMB.createController}"></h:commandButton>
+							<h:commandButton styleClass="btn btn-primary" value="#{l.btnDelete}" action="#{personMB.createController}"></h:commandButton>
 						</h:form>						
 					</div>
 				</div>
